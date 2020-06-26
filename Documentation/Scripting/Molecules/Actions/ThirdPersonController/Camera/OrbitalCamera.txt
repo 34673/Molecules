@@ -1,0 +1,10 @@
+OrbitalCamera -- Class derived from MonoBehaviour
+
+Action component including a variant of a basic orbit-type camera control for 3rd person perpectives. This variant checks for a zooming state to control sensitivity. The behavior is based on a setup in the scene hierarchy where the camera is a child to the pivot. That allows to easily set offsets in the scene while keeping the code size down. The target is also customizable, allowing panning or more offset types.
+
+Fields
+    [Transform] pivot -- Camera pivot to update.
+    [Transform] target -- Target object to set the pivot position to.
+    [String] horizontalAxis -- Axis name from the input manager to be used for the horizontal movement.
+    [String] verticalAxis -- Axis name from the input manager to be used for the vertical movement.
+    [Vector2] verticalClamps -- Vertical limits of the viewing angle. X is minimum, Y is maximum.

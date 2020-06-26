@@ -1,0 +1,3 @@
+The camera system is based on how the scene hierarchy works. It consists of an empty pivot gameobject with the only purpose of holding our camera object. The local position of the camera relative to the parent pivot acts as a camera position offset.
+
+Any movement will be done using simple action scripts that can be placed anywhere in the scene. They all require their dependencies/references to be populated however. These movements will control the position or rotation of either the pivot or the camera. For instance, basic mouselook is achieved by simply rotating the pivot, which movements will cascade onto its children. Camera collisions are likely gonna affect the camera object directly.

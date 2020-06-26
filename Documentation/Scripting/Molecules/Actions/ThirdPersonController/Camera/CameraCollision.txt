@@ -1,0 +1,10 @@
+CameraCollision -- Class derived from MonoBehaviour
+
+Action component interpolates a camera's position towards a given pivot when a collider intersects them.
+
+Fields
+    [Transform] transform -- Target camera transform.
+    [Transform] pivot -- Camera pivot
+    [LayerMask] layer -- Collision layers the raycast will react to.
+    [Hidden][Vector3] direction -- Direction of the camera relative to the pivot.
+    [Hidden][Vector3] distance -- Distance of the camera relative to the pivot.

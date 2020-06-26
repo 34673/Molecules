@@ -1,0 +1,26 @@
+UpdateMovement -- Class derived from MonoBehaviour
+
+Action component used to update a root motion animator controller for movement magnitude (0 to 1) and direction (angle from -180 to 180).
+
+Fields
+    [Transform] cameraPivot -- Pivot of a camera to be multiplied by the input to get a direction relative to the view direction.
+    [Transform] target -- Target object controlled by the animator controller. Used to know the current facing angle of the controller so we can later deduce the new relative angle the controller will use.
+    [Animator] animator -- Target animator controller.
+    [String] angleVariable -- Variable name from the animator controller that will control the relative angle used on the state machine.
+    [String] magnitudeVariable -- Variable name from the animator controller that will control the input magnitude used on the state machine.
+    [String] horizontalAxis -- Axis name from the input manager to be used for the horizontal movement.
+    [String] verticalAxis -- Axis name from the input manager to be used for the vertical movement.
+
+Algorithm breakdown:
+
+The input variable queries the input manager for horizontal and vertical movements, ending in data containing both the direction and magnitude/amplitude/intensity of our input. Each axis is multiplied to the camera's axes to get input relative to the camera, so we are sure to get the same response no matter where we look.
+
+In order to not mess up our movements in real time, we are only updating the angle in the animator when we get an input. The magnitude is always updated because it is useful to the controller at all times.
+
+currentAngle represent the angle our target character is currently facing. We are only interested in the Y axis since it's about rotating our character left or right. The angle is already in range -180 to 180, so no conversion needed.
+
+inputAngle transforms our input direction as a vector into a quaternion before being converted to euler angles, which are more usable in our context. The result is an angle between 0 to 360. Since we're working with a -180 to 180 range (making it easier to mirror angles on setups), we will have to convert the range to work with the values. Any value over 180 represents the left side of our virtual compass. Simply subtracting 360 to it will give the negative equivalent.
+
+We can now get the angle difference between the current direction and the relative input. This difference will however be relative to the current angle, since it's the left member of our subtraction. The range will be from 0 to 360 again, so we will have to yet again do the conversion.
+
+After all these operations we effectively get our left and right sides switched, where right is negative and left is positive. To fix it towards a more natural setup, we just have to negate the new angle. Now we can simply tell the animator controller the new angle to be used to determine which animation to play.

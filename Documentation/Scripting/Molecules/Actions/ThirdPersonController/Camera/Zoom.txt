@@ -1,0 +1,9 @@
+Zoom -- Class derived from MonoBehaviour
+
+Action component for a camera field of view based zooming. Movement is interpolated.
+
+Fields:
+    [Camera] camera -- Target camera to get the field of view.
+    [float] targetFOV -- Target field of view value to move towards.
+    [float] speed -- Speed of the zooming.
+    [Hidden][Float] defaultFOV -- Saved field of view value the target had when this script was initialized.

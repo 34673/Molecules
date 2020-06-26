@@ -1,0 +1,3 @@
+CheckTurn -- Class derived from StateMachineBehavior
+
+Uses States.all collection to indirectly inform other scripts whether we enter or leave the Animator state the script is attached to. Used for instance in an AnimatorController on any looping state that needs fine direction/turning controls like Walk, Run or Sprint.

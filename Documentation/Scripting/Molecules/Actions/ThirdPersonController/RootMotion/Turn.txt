@@ -1,0 +1,10 @@
+Turn -- Class derived from MonoBehaviour
+
+Action component used to turn the character towards the movement input. This variant will only perform if the state it depends on is true, to allow root motion controllers to use fine turning on certain instances (walk loop using a single animation and a turn script).
+
+Fields
+    [Transform] targetObject -- The object to turn.
+    [Transform] cameraPivot -- Pivot of a camera to be multiplied by the input to get a direction relative to the view direction.
+    [String] horizontalAxis -- Axis name from the input manager to be used for the horizontal movement.
+    [String] verticalAxis -- Axis name from the input manager to be used for the vertical movement.
+    [float] lerpAmount -- The percentage of movement towards the target (0 to 1 range). Used by Quatersnion.Slerp() internally.

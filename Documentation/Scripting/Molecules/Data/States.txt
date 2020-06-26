@@ -1,0 +1,3 @@
+States -- Static Class
+
+A simple dictionary wrapped in a static class for easy global access. Used to store states (boolean) by various scripts in a way that allows structural changes at runtime. Preferably keyed using paths (ex: "Player/IsDead").
