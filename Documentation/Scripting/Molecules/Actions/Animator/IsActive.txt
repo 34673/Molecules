@@ -1,0 +1,6 @@
+IsActive -- Class derived from StateMachineBehavior
+
+Sets a global state to mark that the animator state this script is assigned to is active.
+
+Fields
+    [string] targetState -- Name of the state to set.

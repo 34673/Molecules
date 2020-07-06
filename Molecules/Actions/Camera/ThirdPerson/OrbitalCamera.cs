@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace Molecules.Actions.ThirdPersonController.Camera{
+namespace Molecules.Actions.Camera.ThirdPerson{
 	using Molecules.Data;
 	public class OrbitalCamera : MonoBehaviour{
 		public Transform pivot;

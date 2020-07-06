@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityCamera = UnityEngine.Camera;
-namespace Molecules.Actions.ThirdPersonController.Camera{
+namespace Molecules.Actions.Camera{
     using Molecules.Data;
     public class Zoom : MonoBehaviour{
         public new UnityCamera camera;

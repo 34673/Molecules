@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace Molecules.Actions.ThirdPersonController.Camera{
+namespace Molecules.Actions.Camera.ThirdPerson{
 	public class CameraCollision : MonoBehaviour{
         public new Transform transform;
         public Transform pivot;

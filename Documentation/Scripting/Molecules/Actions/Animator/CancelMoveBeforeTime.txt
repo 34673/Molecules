@@ -1,0 +1,8 @@
+CancelMoveBeforeTime -- Class derived from StateMachineBehavior
+
+Cancels a state based on movement input and the state's normalizedTime value. The cancelling is handled via a trigger checked from an output transition.
+
+Fields:
+    [string] inputMagnitude -- Variable in the animator controller.
+    [string] trigger -- Variable in the animator controller.
+    [float] normalizedTime -- Threshold before which the state can be cancelled if there is no input.
